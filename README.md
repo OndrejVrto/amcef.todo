@@ -45,19 +45,16 @@ The application was created as a test project in one weekend. May contain errors
 
 # installation and basic settings
 
-### Command line
+### Order of commands
 ```bash
 git clone https://github.com/OndrejVrto/amcef.todo
 cd amcef.todo
 cp .env.example .env
+composer install
 php artisan key:generate
 php artisan storage:link
+npm install
 npm run build
-```
-
-**In separate console**
-```bash
-php artisan queue:work
 ```
 ### Example configuration in ```.env``` file
 ```bash
@@ -101,8 +98,23 @@ php artisan migrate:fresh --seeder Database\Seeders\DatabaseSeederBasic
 php artisan migrate:fresh --seeder Database\Seeders\DatabaseSeederFull
 ```
 
+### Run Queue worker in separate console
+```bash
+php artisan queue:work
+```
+
 # Example Views
 **Appearance in the Firefox browser**
+https://amcef.todo
+if is using Laragon.
+
+## Posible logins from "full" seeder
+
+***email:***  ```ondrej@example.com```
+or  ```milan@example.com```
+or  ```samuel@example.com```
+
+***password:***  ```password```
 
 ## Main page
 ![Main page](art/example-1.png)
