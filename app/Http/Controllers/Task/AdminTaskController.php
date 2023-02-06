@@ -26,9 +26,9 @@ class AdminTaskController {
         ])->valid();
 
         $filterSorting     = $validator['sorting'] ?? null;
-        $filterCategory    = isset($validator['category']) ? intOrNull($validator['category']) : null;
-        $filterOwnerType   = isset($validator['owner-type']) ? intOrNull($validator['owner-type']) : null;
-        $filterTaskStatuse = isset($validator['task-status']) ? intOrNull($validator['task-status']) : null;
+        $filterCategory    = intOrNull($validator['category'] ?? null);
+        $filterOwnerType   = intOrNull($validator['owner-type'] ?? null);
+        $filterTaskStatuse = intOrNull($validator['task-status'] ?? null);
 
         $tasks = Task::query()
             ->with('categories')
