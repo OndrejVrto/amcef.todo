@@ -1,0 +1,112 @@
+// Import all of Bootstrap's CSS
+// @import "~bootstrap/scss/bootstrap";
+
+
+/*---------------------------------
+[Custom BootStrap SASS]
+Project: amcef.todo
+-------------------------------------------------------------------*/
+
+// Option B: Include parts of Bootstrap
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$amcef-green        : #9EFA56;
+$amcef-black        : #23242E;
+
+$link-color         : #009de0;
+$link-decoration    : none;
+
+$component-active-bg: $amcef-green;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+// $primary          : $amcef-green;
+
+$dropdown-link-active-bg: $amcef-green;
+$dropdown-link-active-color: $amcef-black;
+
+$amcef-gray         : $gray-200;
+$custom-colors: (
+    "amcef-green"  :$amcef-green,
+    "amcef-black"  :$amcef-black,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$grid-breakpoints: map-remove($grid-breakpoints, "xxl");
+$container-max-widths: map-remove($container-max-widths, "xxl");
+
+$font-size-base: 0.9rem;
+
+$h1-font-size:  $font-size-base * 2;
+$h2-font-size:  $font-size-base * 1.75;
+$h3-font-size:  $font-size-base * 1.5;
+$h4-font-size:  $font-size-base * 1.2;
+$h5-font-size:  $font-size-base * 1.1;
+$h6-font-size:  $font-size-base;
+
+$font-family-sans-serif:      Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$table-bg-scale:              -50%;
+$table-variants: (
+    "amcef-green": shift-color($amcef-green, $table-bg-scale),
+    "primary"    : shift-color($primary, $table-bg-scale),
+    "secondary"  : shift-color($secondary, $table-bg-scale),
+    "success"    : shift-color($success, $table-bg-scale),
+    "info"       : shift-color($info, $table-bg-scale),
+    "warning"    : shift-color($warning, $table-bg-scale),
+    "danger"     : shift-color($danger, $table-bg-scale),
+    "light"      : $light,
+    "dark"       : $dark,
+);
+
+
+// 5. Include remainder of required parts
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// 6. Optionally include any other parts as needed
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+// @import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+// @import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+// @import "~bootstrap/scss/accordion";
+// @import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/toasts";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+// @import "~bootstrap/scss/spinners";
+// @import "~bootstrap/scss/offcanvas";
+// @import "~bootstrap/scss/placeholders";
+
+// 7. Helpers
+@import "~bootstrap/scss/helpers";
+
+// 8. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
+
+// 9. Additional custom code here
+@import "_custom";

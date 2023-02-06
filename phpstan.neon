@@ -1,0 +1,23 @@
+parameters:
+    level: max
+
+    paths:
+        - app
+
+    excludePaths:
+        # - app/example.php
+
+    tmpDir: build/phpstan
+
+    checkMissingIterableValueType: true
+
+    checkGenericClassInNonGenericObjectType: false
+
+    ignoreErrors:
+        # - '#example#'
+        - '#^Access to an undefined property.*Model.*#'
+        - '#^Call to an undefined static method App\\Models\\.*#'
+        - '#^Call to an undefined method.*Guard::id\(\)#'
+        - '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany::where\(\)#'
+        - '#Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable::\$unreadNotifications#'
+        - '#Call to an undefined method Illuminate\\Contracts\\Routing\\ResponseFactory\|Illuminate\\Http\\Response::noContent\(\)#'
